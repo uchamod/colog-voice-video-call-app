@@ -44,6 +44,9 @@ dependencies:
   zego_uikit: ^2.27.17
   zego_uikit_prebuilt_call: ^4.16.15
   zego_uikit_signaling_plugin: ^2.8.8
+  cached_network_image: ^3.4.1
+  device_info_plus: ^11.2.0
+  flutter_styled_toast: ^2.2.1
 
 dev_dependencies:
   flutter_test:
