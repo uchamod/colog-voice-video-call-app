@@ -7,7 +7,8 @@ import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
 
 /// Logs in the user by storing the user ID in local storage and updating the
 /// current user information.
-Future<void> loginUser(String userId, String userName) async {
+Future<void> loginUser(
+    {required String userId, required String userName}) async {
   SharedPreferences pref = await SharedPreferences.getInstance();
   await pref.setString(userIdKey, userId);
   await pref.setString(userNameKey, userName);
@@ -57,4 +58,10 @@ Future<void> onUserLogin() async {
       return config;
     },
   );
+}
+
+/// on user logout
+void onUserLogout() {
+  /// 5/5. de-initialization ZegoUIKitPrebuiltCallInvitationService when account is logged out
+  ZegoUIKitPrebuiltCallInvitationService().uninit();
 }
